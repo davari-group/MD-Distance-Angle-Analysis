@@ -1,19 +1,28 @@
-# Distance & Angle — MD Replicate Geometry Analyzer (Colab-Ready)
+# Distance & Angle — Multi-Replicate MD Geometry Analysis (Colab-Ready)
 
-This project provides a **Google Colab–friendly workflow** to quantify **aromatic ring–H geometries** and **short O–H contacts** across **multiple MD replicates**. It is built on **MDAnalysis**, **NumPy/Pandas**, and **Matplotlib**.
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davari-group/MD-Distance-Angle-Analysis/blob/main/Distance%26Angle.ipynb)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![MDAnalysis](https://img.shields.io/badge/MDAnalysis-2.x-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-**What it does**
-- Loads **3 MD replicates** (example: `E22G/MD.gro` with `E22G/3uMD*_noPBC.xtc`).
-- For aromatic residues **4, 10, 19, 20**, computes per-frame:
-  - Distance from **ring centroid → residue 22 (N/H)**
-  - Angle between **centroid→H vector** and the **ring normal**
-- Filters events (example thresholds in notebook): **distance ≤ 5 Å** and **angle ≤ 60° or ≥ 120°**.
-- Aggregates results per run and **exports CSVs** (`Run1/2/3.csv`, `Run_All1/2/3.csv`).
-- Tallies **Gly O–H contacts** (residues 9, 22, 25, 29, 33, 37, 38) using **2.61 Å** cutoff and
-  renders a per-replicate **bar chart**.
+> **One-line:** Compute and visualize **aromatic ring–H distances/angles**  across **multiple MD replicates**. Export publication-ready plots and tidy CSVs.
 
-**Outputs**
-- `scatter.png` — Distance vs angle (per replicate overlay)
-- `histogram.png` — Binned distance distribution for ring-H events
-- `histogram_g.png` — Gly O–H contact occurrence (%) by residue
-- `Run*.csv`, `Run_All*.csv` — Clean tables for stats/ML
+---
+
+## Overview
+
+This notebook analyzes MD trajectories to characterize:
+- **Aromatic ring–H geometry** for residues **4, 10, 19, 20** vs **residue 22 (N/H)**:
+  - **Distance** (ring centroid → H/N) and **angle** (to ring normal)
+  - Filters events (default): **distance ≤ 5 Å** and **angle ≤ 60° or ≥ 120°**
+
+
+It supports **three replicates** out-of-the-box and produces:
+- `scatter.png` (distance–angle overlay),  
+- `histogram.png` (distance distribution, % per replicate),  
+- `histogram_g.png` (Gly O–H contact % by residue),  
+- `Run1/2/3.csv` and `Run_All1/2/3.csv` (per-run and combined tables).
+
+---
+
+You just need to upload the trajectories with respective gro file. You can use the E22G or WT version and comment the other when you are running the pipeline.
