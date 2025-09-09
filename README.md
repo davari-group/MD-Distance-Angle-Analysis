@@ -41,7 +41,7 @@ ipywidgets
 # Optional (not required for core scripts but useful for notebooks)
 jupyterlab
 
-The full requirements list used are provided along with this repository
+The full requirements list used are provided along with this repository in requirements_full.txt
 ---
 
 
