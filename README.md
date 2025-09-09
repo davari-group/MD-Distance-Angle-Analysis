@@ -24,5 +24,25 @@ It supports **three replicates** out-of-the-box and produces:
 - `Run1/2/3.csv` and `Run_All1/2/3.csv` (per-run and combined tables).
 
 ---
+# Requirements for the IDP analysis pipeline
+# Install with: pip install -r requirements.txt
+
+numpy
+MDAnalysis
+pandas
+matplotlib
+seaborn
+scipy
+scikit-learn
+requests
+nglview
+ipywidgets
+
+# Optional (not required for core scripts but useful for notebooks)
+jupyterlab
+
+The full requirements list used are provided along with this repository
+---
+
 
 You just need to upload the trajectories with respective gro file. You can use the E22G or WT version and comment the other when you are running the pipeline.
