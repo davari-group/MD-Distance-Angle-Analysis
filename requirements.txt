@@ -1,0 +1,16 @@
+# Requirements for the IDP analysis pipeline
+# Install with: pip install -r requirements.txt
+
+numpy
+MDAnalysis
+pandas
+matplotlib
+seaborn
+scipy
+scikit-learn
+requests
+nglview
+ipywidgets
+
+# Optional (not required for core scripts but useful for notebooks)
+jupyterlab
